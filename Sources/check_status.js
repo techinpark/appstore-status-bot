@@ -30,6 +30,9 @@ function checkVersion(app) {
         if(app.status == "Waiting For Review") {
             db.set(submissionStartKey, new Date());
         }
+    } 
+    else {
+       console.log("status is same");  
     }
 
     db.set(appInfoKey, app);
