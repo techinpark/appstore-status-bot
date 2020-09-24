@@ -16,3 +16,9 @@ jobs:
       - run: gem install bundler:2.1.4
       - run: bundle install
       - run: ruby Sources/fetch_app_status.rb
+        env: 
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          KEY_ID: ${{ secrets.KEY_ID }}
+          ISSUER_ID: ${{ secrets.ISSUER_ID }}
+          BUNDLE_ID: ${{ secrets.BUNDLE_ID }}
+          
