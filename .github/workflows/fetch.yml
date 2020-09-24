@@ -15,6 +15,7 @@ jobs:
           ruby-version: "2.6"
       - run: gem install bundler:2.1.4
       - run: bundle install
+      - run: npm install 
       - run: node Sources/check_status.js
         env: 
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
