@@ -1,7 +1,7 @@
 var exec = require("child_process").exec; 
 var env = Object.create(process.env);
 
-exec('ruby fetch_app_status.rb', {env : env}, function (err, stdout, stderr) {
+exec('ruby Sources/fetch_app_status.rb', {env : env}, function (err, stdout, stderr) {
     if (stdout) {
         //console.log(stdout)
         var versions = JSON.parse(stdout);
