@@ -1,4 +1,4 @@
-name: Build & Lint
+name: Fetch Appstore Info 
 
 on: push
 
@@ -21,4 +21,13 @@ jobs:
           KEY_ID: ${{ secrets.KEY_ID }}
           ISSUER_ID: ${{ secrets.ISSUER_ID }}
           BUNDLE_ID: ${{ secrets.BUNDLE_ID }}
-          
+      - name: push
+        uses: github-actions-x/commit@v2.7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: 'master'
+          commit-message: 'Store Appstore Info'
+          force-add: 'true'
+          files: store.db
+          name: Fernando
+          email: techin.park@daum.net
