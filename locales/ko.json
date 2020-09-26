@@ -1,0 +1,20 @@
+{
+	"Prepare for Submission": "제출 준비 중",
+	"Waiting For Review": "심사 대기 중",
+	"In Review": "심사 중",
+	"Pending Contract": "대기 중인 계약",
+	"Waiting For Export Compliance": "수출 규정 관련 문서 승인 대기중",
+	"Pending Developer Release": "개발자 출시 대기 중",
+	"Processing for App Store": "App Store 판매 준비중",
+	"Pending Apple Release": "대기중인 앱 이전",
+	"Ready for sale": "판매 준비됨",
+	"Rejected": "거부됨",
+	"Metadata Rejected": "메타데이터가 거부됨",
+	"Removed From Sale": "판매가 중단됨",
+	"Developer Rejected": "개발자가 취소함",
+	"Developer Removed From Sale": "개발자가 판매를 중단함",
+    "Invalid Binary": "Invalid Binary",
+    "Status": "상태",
+    "Version": "버전",
+    "Message": "*{{appname}}* 앱의 상태가 *{{status}}* 으로 변경 되었습니다. 🚀"
+}

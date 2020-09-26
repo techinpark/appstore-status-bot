@@ -1,8 +1,10 @@
-var exec = require("child_process").exec; 
-var dirty = require('dirty');
-var db = dirty('store.db');
+const slack = require("./slack.js")
+const exec = require("child_process").exec; 
+const dirty = require('dirty');
+const { prependOnceListener } = require("process");
+const db = dirty('store.db');
 
-var env = Object.create(process.env);
+const env = Object.create(process.env);
 
 exec('ruby Sources/fetch_app_status.rb', {env : env}, function (err, stdout, stderr) {
     if (stdout) {
@@ -26,6 +28,7 @@ function checkVersion(app) {
     if(!lastAppInfo || lastAppInfo.status != app.status) {
 
         console.log("status is different");
+        slack.post(app, db.get(submissionStartKey))
 
         if(app.status == "Waiting For Review") {
             db.set(submissionStartKey, new Date());

@@ -1,0 +1,20 @@
+{
+    "Prepare for Submission" : "Prepare for Submission",
+    "Waiting For Review" : "Waiting For Review",
+    "In Review" : "In Review",
+    "Pending Contract" : "Pending Contract",
+    "Waiting For Export Compliance" : "Waiting For Export Compliance",
+    "Pending Developer Release" : "Pending Developer Release",
+    "Processing for App Store" : "Processing for App Store",
+    "Pending Apple Release" : "Pending Apple Release",
+    "Ready for sale" :  "Ready for Sale",
+    "Rejected" : "Rejected",
+    "Metadata Rejected" : "Metadata Rejected",
+    "Removed From Sale" : "Removed From Sale",
+    "Developer Rejected" : "Developer Rejected",
+    "Developer Removed From Sale" : "Developer Removed From Sale",
+    "Invalid Binary" : "Invalid Binary",
+    "Status": "Status",
+    "Version": "Version",
+    "Message": "The status of your app *{{appname}}* has been changed to *{{status}}* 🚀"
+}
