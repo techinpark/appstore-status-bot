@@ -7,12 +7,13 @@
 
 # Introduce 🤷🏻‍♂️
 App Store Connect status bot is a simple bot script fetches your app info directly from App Store Connect and post changes in slack as a bot using `github-actions`, help of fastlane`s [Spaceship](https://github.com/fastlane/fastlane/tree/master/spaceship)
+For using this bot, Just `fork` this repository is `Super Easy`
+
 
 # Features 🍯
 - 🚀  Fetch appstore connect info using apppstore connect API 
 - 📣  Share your application `status` information to your slack workspace 
-- 📦  For using this bot, Just `fork` this repository is `Super Easy`
-- `Localization` support  (`english`, `korean`) 
+- 🌍 `Localization` support  (`english`, `korean`) 
 
 # Preview 🤖
 <img src="./.github/images/preview.png" width="70%">
