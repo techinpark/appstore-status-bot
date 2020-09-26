@@ -1,15 +1,9 @@
- 
-
-<div style="text-align:center">
-<p style="font-size:50px;margin-bottom:0px">🚀</p>
-<h1>App Store Connect status bot </h1>
-<br>
+# App Store Connect status bot 🚀
 
 ![Fetch Appstore Info](https://github.com/techinpark/appstore-status-bot/workflows/Fetch%20Appstore%20Info/badge.svg)
 ![stars](https://img.shields.io/github/stars/techinpark/appstore-status-bot?color=yellow&style=social)
 ![forks](https://img.shields.io/github/forks/techinpark/appstore-status-bot?style=social)
-
-</div>
+ 
 
 # Introduce 🤷🏻‍♂️
 App Store Connect status bot is a simple bot script fetches your app info directly from App Store Connect and post changes in slack as a bot using github-actions, help of fastlane`s [Spaceship](https://github.com/fastlane/fastlane/tree/master/spaceship)
