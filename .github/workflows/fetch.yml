@@ -1,6 +1,9 @@
 name: Fetch Appstore Info 
 
-on: push
+on: 
+ schedule:
+    # 매시 정각 1시간 간격으로 실행 
+    - cron: "0 2 * * *"
 
 jobs:
   build:
