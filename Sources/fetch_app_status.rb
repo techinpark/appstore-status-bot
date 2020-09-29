@@ -5,18 +5,38 @@ require 'tempfile'
 def get_app_state(app)
   
   version_info = app.get_live_app_store_version
-  icon_url = version_info.build.icon_asset_token["templateUrl"]
-  icon_url["{w}"] = "340"
-  icon_url["{h}"] = "340"
-  icon_url["{f}"] = "png"
+  edit_version_info = app.get_edit_app_store_version
 
+  version_string = ""
+  app_store_state = ""
+
+  if edit_version_info.nil? == false
+    version_string = edit_version_info.version_string
+    app_store_state = edit_version_info.app_store_state.gsub("_", " ").capitalize
+  else 
+    version_string = version_info.version_string
+    app_store_state = version_info.app_store_state.gsub("_", " ").capitalize
+  end
+
+
+  
+  icon_url = ""
+  if version_info.nil? == false
+    icon_url = version_info.build.icon_asset_token["templateUrl"]
+    icon_url["{w}"] = "340"
+    icon_url["{h}"] = "340"
+    icon_url["{f}"] = "png"
+  end
+
+
+  
   {
     "name" => app.name,
-    "version" => version_info.version_string,
-    "status" => version_info.app_store_state.gsub("_", " ").capitalize, 
-    "appID" => app.id, 
+    "version" => version_string,
+    "status" => app_store_state, 
+    "appID" => app.id ,
     "iconURL" => icon_url
-  }
+    }
 end
 
 # Create temp file. 
