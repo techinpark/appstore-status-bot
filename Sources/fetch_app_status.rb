@@ -55,6 +55,7 @@ p8_file.write(p8)
 p8_file.rewind
 
 bundle_id = ENV['BUNDLE_ID']
+versions = []
 
 token = Spaceship::ConnectAPI::Token.create( 
   key_id: ENV['KEY_ID'],
