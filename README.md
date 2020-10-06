@@ -43,7 +43,7 @@ To get your Key ID, copy it from App Store Connect by logging in to [App Store C
 > PRIVATE_KEY: Input raw data about your API Key file (.p8)  
 > KEY_ID : Input Appstore connect `key_id`  
 > ISSUER_ID : Input Appstore connect `issuer_id`   
-> BUNDLE_ID : Input your bundle_identifier of application   
+> BUNDLE_ID : Input your bundle_identifier of application you can input multiple bundle_id with comma 
 > SLACK_WEBHOOK :  Input your slack webhook url   
 
 
