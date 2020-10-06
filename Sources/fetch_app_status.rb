@@ -13,14 +13,13 @@ def get_app_state(app)
   if edit_version_info.nil? == false
     version_string = edit_version_info.version_string
     app_store_state = edit_version_info.app_store_state.gsub("_", " ").capitalize
-  else 
+  elsif version_info.nil? == false 
     version_string = version_info.version_string
     app_store_state = version_info.app_store_state.gsub("_", " ").capitalize
   end
 
-
-
   icon_url = ""
+  
   if version_info.nil? == false
     icon_url = version_info.build.icon_asset_token["templateUrl"]
     icon_url["{w}"] = "340"
@@ -35,7 +34,19 @@ def get_app_state(app)
     "appID" => app.id, 
     "iconURL" => icon_url
   }
+  
 end
+
+def get_app_version_from(bundle_id) 
+  apps = []
+  if bundle_id
+    apps.push(Spaceship::ConnectAPI::App.find(bundle_id))
+  else 
+    apps = Spaceship::ConnectAPI::App.all
+  end 
+  apps.map { |app| get_app_state(app) }
+end 
+
 
 # Create temp file. 
 p8 = ENV['PRIVATE_KEY']
@@ -51,10 +62,18 @@ token = Spaceship::ConnectAPI::Token.create(
   filepath: File.absolute_path(p8_file.path)
 )
 
+
 Spaceship::ConnectAPI.token = token 
 
-app = Spaceship::ConnectAPI::App.find(bundle_id) 
-info = get_app_state(app)
+bundle_id_array = bundle_id.to_s.split(",")
 
-puts JSON.dump info 
+if bundle_id_array.length.zero?
+  versions += get_app_version_from(nil)
+else 
+  bundle_id_array.each do |bundle_id|
+    versions += get_app_version_from(bundle_id)
+  end  
+end
+
+puts JSON.dump versions
 p8_file.unlink

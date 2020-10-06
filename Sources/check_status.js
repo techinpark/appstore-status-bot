@@ -8,9 +8,12 @@ const env = Object.create(process.env);
 
 exec('ruby Sources/fetch_app_status.rb', {env : env}, function (err, stdout, stderr) {
     if (stdout) {
-        //console.log(stdout)
         var app = JSON.parse(stdout);
         checkVersion(app);
+        var apps = JSON.parse(stdout);
+        for(let app of apps) {
+            checkVersion(app);
+        }
     }
     else {
         console.log("There was a problem fetching the status of the app!");
