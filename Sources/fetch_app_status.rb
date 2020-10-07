@@ -6,6 +6,7 @@ def get_app_state(app)
   
   version_info = app.get_live_app_store_version
   edit_version_info = app.get_edit_app_store_version
+  appstore_version_info = app.get_app_store_versions.first
   
   version_string = ""
   app_store_state = ""
@@ -15,7 +16,10 @@ def get_app_state(app)
     app_store_state = edit_version_info.app_store_state.gsub("_", " ").capitalize
   elsif version_info.nil? == false 
     version_string = version_info.version_string
-    app_store_state = version_info.app_store_state.gsub("_", " ").capitalize
+    app_store_state = version_info.app_store_state.gsub("_", " ").capitalize    
+  elsif appstore_version_info.nil? == false 
+    version_string = appstore_version_info.version_string
+    app_store_state = appstore_version_info.app_store_state.gsub("_", " ").capitalize
   end
 
   icon_url = ""
