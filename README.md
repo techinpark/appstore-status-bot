@@ -1,4 +1,5 @@
-# App Store Connect Status bot 🚀
+<center><img src="./.github/images/og.png" width="70%"></center>
+
 
 ![Fetch Appstore Info](https://github.com/techinpark/appstore-status-bot/workflows/Fetch%20Appstore%20Info/badge.svg)
 ![stars](https://img.shields.io/github/stars/techinpark/appstore-status-bot?color=yellow&style=social)
