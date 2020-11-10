@@ -25,7 +25,7 @@ jobs:
           ISSUER_ID: ${{ secrets.ISSUER_ID }}
           BUNDLE_ID: ${{ secrets.BUNDLE_ID }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          LANGUAGE: "en"
+          LANGUAGE: "ko"
       - name: push
         uses: github-actions-x/commit@v2.7
         with:
