@@ -36,5 +36,5 @@ jobs:
           commit-message: 'Store Appstore Info'
           force-add: 'true'
           files: store.db
-          name: Fernando
-          email: techin.park@daum.net
+          name: Jinno Baek
+          email: rowkaxl@naver.com
