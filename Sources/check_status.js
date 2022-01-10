@@ -6,7 +6,7 @@ const request = require('request');
 const { prependOnceListener } = require("process");
 const fs = require('fs');
 const env = Object.create(process.env);
-const octokit = new Octokit({ auth: `token ${process.env.GITHUB_TOKEN}`});
+const octokit = new Octokit({ auth: `token ${process.env.GH_TOKEN}`});
 
 getGist();
 
