@@ -61,7 +61,7 @@ async function getGist() {
     
     const gist = await octokit.rest.gists.get({
         gist_id: process.env.GIST_ID
-    }).catch(error => console.error('[*] Unable to update gist\n${error}'));
+    }).catch(error => console.error(`[*] Unable to update gist\n${error}`));
     if (!gist) return ; 
 
     const filename = Object.keys(gist.data.files)[0];
@@ -86,7 +86,7 @@ async function updateGist(content) {
     
     const gist = await octokit.rest.gists.get({
         gist_id: process.env.GIST_ID
-    }).catch(error => console.error('[*] Unable to update gist\n${error}'));
+    }).catch(error => console.error(`[*] Unable to update gist\n${error}`));
     if (!gist) return ; 
 
     const filename = Object.keys(gist.data.files)[0];
