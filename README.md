@@ -47,7 +47,7 @@ To get your Key ID, copy it from App Store Connect by logging in to [App Store C
 > ISSUER_ID : Input Appstore connect `issuer_id`   
 > BUNDLE_ID : Input your bundle_identifier of application you can input multiple bundle_id with comma   
 > SLACK_WEBHOOK :  Input your slack webhook url   
-> GH_TOKEN: Input your github token, (need `gists` and `repo` scope)
+> GH_TOKEN: Input your github token, (need `gists` and `repo` scope).   
 > GIST_ID: Input portion from your gist url:
   - https://gist.github.com/techinpark/**9842e074b8ee46aef76fd0d493bae0ed**
 
