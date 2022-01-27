@@ -16,7 +16,7 @@ App Store Connect status botはアプリの審査状態をSlackにメッセー�
 - 🌍  外国語のサポート (英語、韓国語、日本語)
 
 # プレビュー 🤖
-<img src="./.github/images/preview_ko.png" width="70%">
+<img src="./.github/images/preview.png" width="70%">
 
 
 # 使用 👨🏻‍💻
