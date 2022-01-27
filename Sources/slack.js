@@ -8,7 +8,7 @@ const language = process.env.LANGUAGE
 const i18n = new I18n()
 
 i18n.configure({
-    locales: ['en','ko'],
+    locales: ['en','ko', 'ja'],
     directory: path.join(__dirname, '../locales')
 })
 
