@@ -1,7 +1,8 @@
 name: Fetch Appstore Info 
 
 on:
- schedule:
+  workflow_dispatch:
+  schedule:
      - cron: "0/15 * * * *"
 
 jobs:
