@@ -11,7 +11,7 @@
 	"Rejected": "거부됨",
 	"Metadata Rejected": "메타데이터가 거부됨",
 	"Removed From Sale": "판매가 중단됨",
-	"Developer Rejected": "개발자가 취소함",
+	"Developer rejected": "개발자가 취소함",
 	"Developer Removed From Sale": "개발자가 판매를 중단함",
     "Invalid Binary": "Invalid Binary",
     "Status": "상태",
