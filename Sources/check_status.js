@@ -2,7 +2,7 @@ const slack = require("./slack.js");
 const exec = require("child_process").exec;
 const dirty = require("dirty");
 const { Octokit, App } = require("octokit");
-const request = require("request");
+const request = require("request-promise-native");
 const { prependOnceListener } = require("process");
 const fs = require("fs");
 const env = Object.create(process.env);
@@ -71,14 +71,12 @@ async function getGist() {
     url: rawdataURL,
   };
 
-  request.get(options, function (error, response, body) {
-    console.log(body);
-    fs.writeFile("store.db", body, function (error) {
-      if (error) {
-        return console.log(error);
-      }
-      console.log("[*] file saved!");
-    });
+  const result = await request.get(options);
+  fs.writeFile("store.db", result, function (error) {
+    if (error) {
+      return console.log(error);
+    }
+    console.log("[*] file saved!");
   });
 }
 
