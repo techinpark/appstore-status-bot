@@ -4,34 +4,37 @@ const dirty = require("dirty");
 const { Octokit, App } = require("octokit");
 const request = require("request-promise-native");
 const { prependOnceListener } = require("process");
-const fs = require("fs");
+const fs = require("fs").promises;
 const env = Object.create(process.env);
 const octokit = new Octokit({ auth: `token ${process.env.GH_TOKEN}` });
 
-getGist();
+const main = async () => {
+  await getGist();
 
-exec(
-  "ruby Sources/fetch_app_status.rb",
-  { env: env },
-  function (err, stdout, stderr) {
-    if (stdout) {
-      var apps = JSON.parse(stdout);
-      console.log(apps);
-      for (let app of apps) {
-        checkVersion(app);
+  exec(
+    "ruby Sources/fetch_app_status.rb",
+    { env: env },
+    function (err, stdout, stderr) {
+      if (stdout) {
+        var apps = JSON.parse(stdout);
+        console.log(apps);
+        for (let app of apps) {
+          checkVersion(app);
+        }
+      } else {
+        console.log("There was a problem fetching the status of the app!");
+        console.log(stderr);
       }
-    } else {
-      console.log("There was a problem fetching the status of the app!");
-      console.log(stderr);
     }
-  }
-);
+  );
+};
 
-function checkVersion(app) {
+const checkVersion = async (app) => {
   var appInfoKey = "appInfo-" + app.appID;
   var submissionStartKey = "submissionStart" + app.appID;
 
-  const db = dirty("store.db").on("load", function () {
+  const db = dirty("store.db");
+  db.on("load", async function () {
     var lastAppInfo = db.get(appInfoKey);
     if (!lastAppInfo || lastAppInfo.status != app.status) {
       console.log("[*] status is different");
@@ -46,17 +49,16 @@ function checkVersion(app) {
 
     db.set(appInfoKey, app);
 
-    fs.readFile("store.db", "utf-8", (error, data) => {
-      if (error) {
-        return console.log(error);
-      }
-
-      updateGist(data);
-    });
+    try {
+      const data = await fs.readFile("store.db", "utf-8");
+      await updateGist(data);
+    } catch (error) {
+      console.log(error);
+    }
   });
-}
+};
 
-async function getGist() {
+const getGist = async () => {
   const gist = await octokit.rest.gists
     .get({
       gist_id: process.env.GIST_ID,
@@ -72,15 +74,15 @@ async function getGist() {
   };
 
   const result = await request.get(options);
-  fs.writeFile("store.db", result, function (error) {
-    if (error) {
-      return console.log(error);
-    }
+  try {
+    await fs.writeFile("store.db", result);
     console.log("[*] file saved!");
-  });
-}
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-async function updateGist(content) {
+const updateGist = async (content) => {
   const gist = await octokit.rest.gists
     .get({
       gist_id: process.env.GIST_ID,
@@ -97,4 +99,6 @@ async function updateGist(content) {
       },
     },
   });
-}
+};
+
+main();
