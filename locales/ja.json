@@ -1,0 +1,20 @@
+{
+	"Prepare for Submission": "提出準備中",
+	"Waiting For Review": "審査待ち",
+	"In Review": "審査中",
+	"Pending Contract": "契約保留中",
+	"Waiting For Export Compliance": "輸出コンプライアンス待ち",
+	"Pending Developer Release": "デベロッパのリリース保留",
+	"Processing for App Store": "App Storeで処理中",
+	"Pending Apple Release": "Appleのリリース待ち",
+	"Ready for sale": "配信準備完了",
+	"Rejected": "却下済み",
+	"Metadata Rejected": "メタデータ却下済み",
+	"Removed From Sale": "ストアから削除済み",
+	"Developer Rejected": "デベロッパにより却下済み",
+	"Developer Removed From Sale": "デベロッパによりストアから削除済み",
+    "Invalid Binary": "Invalid Binary",
+    "Status": "状態",
+    "Version": "バージョン",
+    "Message": "*{{appname}}*の状態が*{{status}}*に変更されました。 🚀"
+}
