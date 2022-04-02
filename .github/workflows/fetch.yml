@@ -1,9 +1,9 @@
-name: Fetch Appstore Info 
+name: Fetch Appstore Info
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: "0/15 * * * *"
+    - cron: "0/15 * * * *"
 
 jobs:
   build:
@@ -14,15 +14,15 @@ jobs:
         with:
           node-version: "14.x"
         env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
       - uses: actions/setup-ruby@v1
         with:
           ruby-version: "2.6"
       - run: gem install bundler:2.1.4
       - run: bundle install
-      - run: npm install 
+      - run: npm install
       - run: node Sources/check_status.js
-        env: 
+        env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           KEY_ID: ${{ secrets.KEY_ID }}
           ISSUER_ID: ${{ secrets.ISSUER_ID }}
