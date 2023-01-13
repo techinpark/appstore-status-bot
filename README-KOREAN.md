@@ -42,7 +42,7 @@ App Store Connect status bot 은 앱스토어에 올라가 있는 나의 앱 심
 
 ### 복사해야하는 정보들
 
-> PRIVATE_KEY: 다운로드한 `key file(.p8)`을 텍스트로 열어서 복사한후 넣어주시면 됩니다.
+> PRIVATE_KEY: 다운로드한 `key file(.p8)`을 텍스트로 열어서 복사한후 넣어주시면 됩니다.  
 > KEY_ID : `키 ID`를 이곳에 입력합니다.  
 > ISSUER_ID : `Issuer ID`도 이곳에 입력합니다.   
 > BUNDLE_ID : 상태를 확인하고 싶은 앱의 `bundle identifier` 을 입력해줍니다. (콤마로 구분하시면 2개이상의 앱도 가능합니다.)  
