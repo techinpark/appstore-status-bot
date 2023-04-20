@@ -38,7 +38,7 @@ To get your Key ID, copy it from App Store Connect by logging in to [App Store C
 
 ## 3. Setting Secrets with your keys.
 
-- Go to `Settings` - `Secret and variables` - `New repository secret`
+- Go to `Settings` - `Secrets and variables` - `New repository secret`
 
 ### Secret Values 
 
