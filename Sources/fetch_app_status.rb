@@ -52,7 +52,7 @@ def get_app_version_from(bundle_id)
   else 
     apps = Spaceship::ConnectAPI::App.all
   end 
-  apps.map { |app| get_app_state(app) }
+  apps.compact.map { |app| get_app_state(app) }
 end 
 
 
