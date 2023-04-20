@@ -38,14 +38,14 @@ App Store Connect status bot 은 앱스토어에 올라가 있는 나의 앱 심
 
 ## 3. `Secrets` 설정하기
 
-- 깃헙 레포 페이지에서 `Settings` - `Secrets` - `Add a new secret` 로 들어가서 위에서 복사한 정보들을 세팅해줍니다.
+- 깃헙 레포 페이지에서 `Settings` - `Secret and variables` - `New repository secret` 로 들어가서 위에서 복사한 정보들을 세팅해줍니다.
 
 ### 복사해야하는 정보들
 
 > PRIVATE_KEY: 다운로드한 `key file(.p8)`을 텍스트로 열어서 복사한후 넣어주시면 됩니다.
 > KEY_ID : `키 ID`를 이곳에 입력합니다.  
 > ISSUER_ID : `Issuer ID`도 이곳에 입력합니다.   
-> BUNDLE_ID : 상태를 확인하고 싶은 앱의 `bundle identifier` 을 입력해줍니다. (콤마로 구분하시면 2개이상의 앱도 가능합니다.)  
+> BUNDLE_ID : 상태를 확인하고 싶은 앱의 `bundle identifier` 을 입력해줍니다. (공백 없이 콤마로 구분하시면 2개이상의 앱도 가능합니다.)
 > SLACK_WEBHOOK :  슬랙 Webhook URL을 넣어줍니다.  
 > GH_TOKEN: 깃헙 토큰을 넣어줍니다 (`gists` 와 `repo` 권한이 필요합니다 )  
 > GIST_ID: gist파일을 생성하고 URL에 존재하는 키값을 복사해서 넣어줍니다.  
