@@ -38,7 +38,7 @@ App Store Connect status bot 은 앱스토어에 올라가 있는 나의 앱 심
 
 ## 3. `Secrets` 설정하기
 
-- 깃헙 레포 페이지에서 `Settings` - `Secret and variables` - `New repository secret` 로 들어가서 위에서 복사한 정보들을 세팅해줍니다.
+- 깃헙 레포 페이지에서 `Settings` - `Secrets and variables` - `New repository secret` 로 들어가서 위에서 복사한 정보들을 세팅해줍니다.
 
 ### 복사해야하는 정보들
 
