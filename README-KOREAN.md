@@ -55,7 +55,7 @@ App Store Connect status bot 은 앱스토어에 올라가 있는 나의 앱 심
 
 - [fetch.yml](./.github/workflows/fetch.yml) 
 
-`workflow` 파일 내부에서 언어 설정 및 스케줄 시간을 설정 하실 수 있습니다. 기본값은 `10분` 단위로 되어있습니다.
+`workflow` 파일 내부에서 언어 설정 및 스케줄 시간을 설정 하실 수 있습니다. 기본값은 `15분` 단위로 되어있습니다.
 
 
 # 레퍼런스 🙇🏻‍♂️
