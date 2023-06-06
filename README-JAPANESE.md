@@ -38,14 +38,15 @@ App Store Connect status botはアプリの審査状態をSlackにメッセー�
 
 ## 3. `Secrets`の設定
 
-- リポジトリの設定から `Settings` - `Secrets` - `Add a new secret` 順番にコピーした項目を設定します。
+- リポジトリの設定から `Settings` - `Secrets and variables` - `New repository secret` 順番にコピーした項目を設定します。
 
 ### コピーした項目の設定
 
 > PRIVATE_KEY: ダウンロードした `key file(.p8)`をテキストに開いて全部コピペして入れます。  
 > KEY_ID : `キー ID`をここに入力します。  
 > ISSUER_ID : `Issuer ID`もここに入力します。   
-> BUNDLE_ID : 状態の確認したいアプリの `bundle identifier`を入力します。 (２個以上のアプリの場合は「,」記号を使うと動作します。)  
+> BUNDLE_ID : 状態の確認したいアプリの `bundle identifier`を入力します。 (２個以上のアプリの場合は、「 」 スペースを入れずに、「,」記号を使うと動作します。)  
+> ２個以上のアプリの場合は、カンマ記号を使い、スペースを入れずに入力してください
 > SLACK_WEBHOOK :  SlackのWebhook URLを入力します。  
 > GH_TOKEN: Githubのトークンを入力します。 (`gists`と `repo` 権限が必要です。 )  
 > GIST_ID: gistファイルを作成し、 URLに存在するキーをコピーして入力します。  
@@ -55,7 +56,7 @@ App Store Connect status botはアプリの審査状態をSlackにメッセー�
 
 - [fetch.yml](./.github/workflows/fetch.yml) 
 
-`workflow` ファイルに言語設定、スケジュールの設定ができます。基本 `10分`で動いてます。
+`workflow` ファイルに言語設定、スケジュールの設定ができます。基本 `15分`で動いてます。
 
 
 # レファレンス 🙇🏻‍♂️

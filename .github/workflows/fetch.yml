@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2.1.1
+      - uses: actions/setup-node@v2.4.1
         with:
-          node-version: "14.x"
+          node-version: "16.x"
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
       - uses: ruby/setup-ruby@v1
@@ -30,4 +30,4 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
-          LANGUAGE: "en"
+          LANGUAGE: "ko"
