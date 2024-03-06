@@ -17,10 +17,11 @@ jobs:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "2.6"
+          ruby-version: "2.7"
       - run: gem install bundler:2.1.4
       - run: bundle install
       - run: npm install
+      - run: gem install fastlane -v '2.219.0'
       - run: node Sources/check_status.js
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
