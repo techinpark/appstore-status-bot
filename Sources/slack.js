@@ -29,6 +29,12 @@ function post(appInfo, submissionStartDate) {
 }
 
 async function hook(message, attachment) {
+
+  if (!webhookURL) {
+    console.log("No Slack webhook URL provided.");
+    return;
+  }
+
   const webhook = new IncomingWebhook(webhookURL, {});
   await webhook.send({
     text: message,
