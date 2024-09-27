@@ -1,4 +1,5 @@
 const slack = require("./slack.js");
+const discord = require("./discord.js");
 const exec = require("child_process").exec;
 const dirty = require("dirty");
 const { Octokit, App } = require("octokit");
@@ -38,7 +39,9 @@ const checkVersion = async (app) => {
     var lastAppInfo = db.get(appInfoKey);
     if (!lastAppInfo || lastAppInfo.status != app.status) {
       console.log("[*] status is different");
+
       slack.post(app, db.get(submissionStartKey));
+      discord.post(app, db.get(submissionStartKey));
 
       if (app.status == "Waiting For Review") {
         db.set(submissionStartKey, new Date());

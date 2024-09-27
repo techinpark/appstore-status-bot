@@ -29,6 +29,7 @@ jobs:
           ISSUER_ID: ${{ secrets.ISSUER_ID }}
           BUNDLE_ID: ${{ secrets.BUNDLE_ID }}
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
           LANGUAGE: "ko"

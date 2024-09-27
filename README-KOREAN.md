@@ -47,6 +47,7 @@ App Store Connect status bot 은 앱스토어에 올라가 있는 나의 앱 심
 > ISSUER_ID : `Issuer ID`도 이곳에 입력합니다.   
 > BUNDLE_ID : 상태를 확인하고 싶은 앱의 `bundle identifier` 을 입력해줍니다. (공백 없이 콤마로 구분하시면 2개이상의 앱도 가능합니다.)
 > SLACK_WEBHOOK :  슬랙 Webhook URL을 넣어줍니다.  
+> DISCORD_WEBHOOK : 디스코드 Webhook URL을 넣어줍니다. (optional)  
 > GH_TOKEN: 깃헙 토큰을 넣어줍니다 (`gists` 와 `repo` 권한이 필요합니다 )  
 > GIST_ID: gist파일을 생성하고 URL에 존재하는 키값을 복사해서 넣어줍니다.  
   - https://gist.github.com/techinpark/**9842e074b8ee46aef76fd0d493bae0ed**
