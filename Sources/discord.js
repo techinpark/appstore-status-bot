@@ -16,6 +16,7 @@ i18n.configure({
 i18n.setLocale(language || 'en');
 
 function post(appInfo, submissionStartDate) {
+  if (!webhookURL) return;
   const status = i18n.__(appInfo.status);
   const message = i18n.__("Message", { appname: appInfo.name, status: status });
   const embed = discordEmbed(appInfo, submissionStartDate);
